@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <div style={{width: "50%", textAlign: "justify", fontSize: "20px"}}>
+        <div className='About-myself'>
           <p>
             Привет!
             Меня зовут Кирилл, на данный момент я являюсь системным аналитиком и хочу попробовать себя
