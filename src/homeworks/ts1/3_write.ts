@@ -108,7 +108,9 @@ export const createRandomProduct = (createdAt: string): Product => {
         id: `P-${idProductCount}`,
         name: faker.food.dish(),
         photo: faker.image.url(),
+        desc: faker.food.description(),
         createdAt: createdAt,
+        oldPrice: faker.number.int({min: 100, max: 1000}),
         price: faker.number.int({min: 100, max: 1000}),
         category: {id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory()}
     }
@@ -127,6 +129,7 @@ export const createRandomOperation = (createdAt: string): Operation => {
         id: randomTypeOperation ? `OC-${idCostCount}` : `OP-${idProfitCount}`,
         name: randomTypeOperation ? "Purchase" : "Sale",
         createdAt: createdAt,
+        desc: faker.food.description(),
         amount: faker.number.int({min: 1, max: 10}),
         category: {id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory()},
         type: randomTypeOperation ? "Cost" : "Profit"
