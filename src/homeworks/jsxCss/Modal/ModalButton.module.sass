@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+$red: #3ccbe7
+
+.modalButton
+    box-sizing: border-box
+    appearance: none
+    background-color: transparent
+    border: 2px solid $red
+    border-radius: 0.6em
+    color: $red
+    cursor: pointer
+    font-size: 0.9rem
+    font-weight: 400
+    line-height: 1
+    // margin: 20px
+    padding: 1em 2.6em
+    text-decoration: none
+    text-align: center
+    text-transform: uppercase
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    margin-bottom: 30px
+
+    // анимация
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out
+    &:hover
+        box-shadow: 0 0 40px 40px $red inset
+        color: #fff
+        outline: 0
