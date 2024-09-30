@@ -25,7 +25,7 @@ const typeChildren = {
 }
 
 export default  {
-    title: "Homework2/Modal",
+    title: "Homework2/General/Modal",
     component: Modal,
     argTypes: {
         visible: {

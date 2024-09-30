@@ -1,7 +1,7 @@
 import Header from "./Header";
 
 export default  {
-    title: "Homework2/Header",
+    title: "Homework2/General/Header",
     component: Header,
     argTypes: {
         children: {

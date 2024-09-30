@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 
 export default  {
-    title: "Homework2/Logo",
+    title: "Homework2/General/Logo",
     component: Logo,
     argTypes: {
         children: {
