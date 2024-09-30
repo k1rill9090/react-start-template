@@ -1,7 +1,7 @@
 import Layout from "./Layout";
 
 export default  {
-    title: "Homework2/Layout",
+    title: "Homework2/General/Layout",
     component: Layout,
     argTypes: {
         children: {
