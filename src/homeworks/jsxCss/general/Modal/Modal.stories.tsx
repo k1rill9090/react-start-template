@@ -41,20 +41,6 @@ const meta: Meta<typeof Modal> = {
 
 export default meta
 
-// }
-
-// export default  {
-// title: "Homework2/General/Modal",
-// component: Modal,
-// argTypes: {
-//     visible: {
-//         type: "boolean",
-//         defaultValue: true
-//     },
-//     children: typeChildren
-// }
-// }
-
 export const chilrenAsString = {
     args: {
       visible: true,
