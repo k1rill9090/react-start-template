@@ -1,6 +1,9 @@
+import React from "react";
+import type { Meta } from "@storybook/react";
 import Header from "./Header";
 
-export default  {
+
+const meta: Meta<typeof Header> = {
     title: "Homework2/General/Header",
     component: Header,
     argTypes: {
@@ -11,9 +14,12 @@ export default  {
     }
 }
 
+export default meta
+
 export const primary = {
     args: {
-        children: <div>
+        children:
+            <div>
             <button>button1</button>
             <button>button2</button>
             <button>button3</button>

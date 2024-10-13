@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './InputAddToCart.module.sass'
 
-const InputAddToCard = ({count}) => {
+
+interface InputAddToCardProps {
+  count: number
+}
+
+const InputAddToCard: FC<InputAddToCardProps> = ({count}) => {
 
   return (
     <div className={styles.main}>

@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './OperationFull.module.sass'
 
-const OperationFull = ({name, sum, desc, categoryName, date}) => {
+interface OperationFullProps {
+  name: string,
+  sum: number,
+  desc: string,
+  categoryName: string,
+  date: string
+}
+
+const OperationFull: FC<OperationFullProps> = ({name, sum, desc, categoryName, date}) => {
   return (
     <div className={styles.main}>
       <div className={styles.header}>{name} на {date}</div>

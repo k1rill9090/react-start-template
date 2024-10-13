@@ -1,15 +1,21 @@
+import React from "react";
+import type { Meta } from "@storybook/react";
 import Layout from "./Layout";
 
-export default  {
+
+const meta: Meta<typeof Layout> = {
     title: "Homework2/General/Layout",
-    component: Layout,
-    argTypes: {
-        children: {
-            type: "string",
-            defaultValue: "some value"
-        } 
-    }
+        component: Layout,
+        argTypes: {
+            children: {
+                type: "string",
+                defaultValue: "some value"
+            } 
+        }
 }
+
+export default meta
+
 
 export const primary = {
     args: {

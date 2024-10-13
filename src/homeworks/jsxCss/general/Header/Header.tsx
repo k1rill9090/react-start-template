@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Header.module.sass'
 import Logo from '../Logo/Logo'
-import cn from 'clsx'
 
-const Header = ({children}) => {
+
+interface HeaderProps {
+  children?: React.ReactNode
+}
+
+const Header: FC<HeaderProps> = ({children}) => {
   return (
     <div className={styles.header}>
       <div className={styles.headerContent}>

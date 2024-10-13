@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './ButtonAddToCart.module.sass'
 import InputAddToCart from './InputAddToCart/InputAddToCart'
 
-const ButtonAddToCart = ({count}) => {
+
+interface ButtonAddToCartProps {
+  count?: number,
+}
+
+const ButtonAddToCart: FC<ButtonAddToCartProps> = ({count}) => {
 
   return (
     <div className={styles.card}>

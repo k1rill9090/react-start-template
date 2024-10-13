@@ -1,6 +1,8 @@
+import type { Meta } from "@storybook/react";
 import Logo from "./Logo";
 
-export default  {
+
+const meta: Meta<typeof Logo> = {
     title: "Homework2/General/Logo",
     component: Logo,
     argTypes: {
@@ -10,6 +12,8 @@ export default  {
         } 
     }
 }
+
+export default meta
 
 export const primary = {
     args: {

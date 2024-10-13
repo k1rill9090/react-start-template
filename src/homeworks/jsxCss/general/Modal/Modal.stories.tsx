@@ -1,4 +1,7 @@
+import React from "react";
+import type { Meta } from "@storybook/react";
 import Modal from "./Modal";
+
 
 const typeChildren = {
     description: "Свойство видимости элемента",
@@ -21,10 +24,10 @@ const typeChildren = {
     control: {
         type: "select"
     }
-
 }
 
-export default  {
+
+const meta: Meta<typeof Modal> = {
     title: "Homework2/General/Modal",
     component: Modal,
     argTypes: {
@@ -35,6 +38,22 @@ export default  {
         children: typeChildren
     }
 }
+
+export default meta
+
+// }
+
+// export default  {
+// title: "Homework2/General/Modal",
+// component: Modal,
+// argTypes: {
+//     visible: {
+//         type: "boolean",
+//         defaultValue: true
+//     },
+//     children: typeChildren
+// }
+// }
 
 export const chilrenAsString = {
     args: {

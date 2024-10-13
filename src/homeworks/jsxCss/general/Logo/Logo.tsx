@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Logo.module.sass'
 
-const Logo = ({children}) => {
+
+interface LogoProps {
+  children?: React.ReactNode
+}
+
+const Logo: FC<LogoProps> = ({children}) => {
   return (
     <div className={styles.logo}>
         <img src={require("./logo.svg")} />

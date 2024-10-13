@@ -1,6 +1,8 @@
+import type { Meta } from "@storybook/react";
 import ButtonAddToCart from "./ButtonAddToCart";
 
-export default  {
+
+const meta: Meta<typeof ButtonAddToCart> = {
     title: "Homework2/OnlineStore/ButtonAddToCart",
     component: ButtonAddToCart,
     argTypes: {
@@ -9,6 +11,8 @@ export default  {
         } ,
     }
 }
+
+export default meta
 
 export const primary = {
     args: {
