@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from './Modal.module.sass'
 import styledButton from './ModalButton.module.sass'
 import cn from "clsx"
 
-const Modal = ({visible, children}) => {
+
+interface ModalProps {
+    visible: boolean,
+    children?: React.ReactNode
+}
+
+const Modal: FC<ModalProps> = ({visible, children}) => {
 
     if (!visible) return null
 

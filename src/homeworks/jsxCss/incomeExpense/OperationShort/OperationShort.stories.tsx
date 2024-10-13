@@ -1,6 +1,9 @@
+import React from "react";
+import type { Meta } from "@storybook/react";
 import OperationShort from "./OperationShort";
 
-export default  {
+
+const meta: Meta<typeof OperationShort> = {
     title: "Homework2/IncomeExpense/OperationShort",
     component: OperationShort,
     argTypes: {
@@ -22,6 +25,8 @@ export default  {
         } ,
     }
 }
+
+export default meta
 
 export const primary = {
     args: {

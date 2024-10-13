@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './FullCardGood.module.sass'
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart'
 import Slider from './Slider/Slider'
 
-const FullCardGood = ({sum, img, name, categoryName, desc}) => {
+
+interface FullCardGoodProps {
+  sum: number,
+  img: Array<string>,
+  name: string,
+  categoryName: string,
+  desc: string
+}
+
+const FullCardGood: FC<FullCardGoodProps> = ({sum, img, name, categoryName, desc}) => {
   return (
     <div className={styles.main}>
       <div className={styles.header}>{name}</div>
@@ -18,7 +27,7 @@ const FullCardGood = ({sum, img, name, categoryName, desc}) => {
           <span>Описание</span>
           {desc}
         </div>
-        <ButtonAddToCart />
+        <ButtonAddToCart count={0} />
       </div>
       
     </div>

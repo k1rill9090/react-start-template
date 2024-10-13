@@ -1,17 +1,13 @@
+import { Meta } from "@storybook/react";
 import GoodInCart from "./GoodInCart";
 
-export default  {
+
+const meta: Meta<typeof GoodInCart> = {
     title: "Homework2/OnlineStore/GoodInCart",
     component: GoodInCart,
-    argTypes: {
-        sum: {
-            type: "number",
-        } ,
-        name: {
-            type: "string",
-        }
-    }
 }
+
+export default meta
 
 export const primary = {
     args: {

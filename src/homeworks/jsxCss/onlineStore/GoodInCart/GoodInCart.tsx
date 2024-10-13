@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './GoodInCart.module.sass'
 
-const GoodInCart = ({sum, name}) => {
+
+interface GoodInCartProps {
+  sum: number,
+  name: string,
+}
+
+const GoodInCart: FC<GoodInCartProps> = ({sum, name}) => {
   return (
     <div className={styles.mainContent}>
       <div className={styles.goodsInfo}>

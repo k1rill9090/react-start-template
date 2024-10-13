@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './ShortCardGood.module.sass'
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart'
 
-const ShortCardGood = ({sum, img, name, desc}) => {
+
+interface ShortCardGoodProps {
+  sum: number,
+  img: string,
+  name: string,
+  desc: string,
+}
+
+const ShortCardGood: FC<ShortCardGoodProps> = ({sum, img, name, desc}) => {
   return (
     <div className={styles.mainContent}>
       <img src={img}/>
@@ -11,7 +19,7 @@ const ShortCardGood = ({sum, img, name, desc}) => {
         <span>Цена: <b>{sum} руб.</b></span>
         <div className={styles.desc}>Описание:<br /> {desc}</div>
       </div>
-      <ButtonAddToCart />
+      <ButtonAddToCart count={0} />
     </div>
   )
 }

@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Slider.module.sass'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const Slider = ({imgs}) => {
+
+interface SliderProps {
+    imgs: Array<string>
+}
+
+const Slider: FC<SliderProps> = ({imgs}) => {
  
     const responsive = {
         0: { items: 1 },

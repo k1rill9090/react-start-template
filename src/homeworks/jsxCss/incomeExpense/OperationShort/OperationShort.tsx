@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './OperationShort.module.sass'
 
-const OperationShort = ({name, sum, desc, categoryName}) => {
+
+interface OperationShortProps {
+  name: string,
+  sum: number,
+  desc: string,
+  categoryName: string
+}
+
+const OperationShort: FC<OperationShortProps> = ({name, sum, desc, categoryName}) => {
   return (
     <div >
         <table>
