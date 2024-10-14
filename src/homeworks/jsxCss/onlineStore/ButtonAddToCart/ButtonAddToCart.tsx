@@ -4,7 +4,7 @@ import InputAddToCart from './InputAddToCart/InputAddToCart'
 
 
 interface ButtonAddToCartProps {
-  count?: number,
+  count: number,
 }
 
 const ButtonAddToCart: FC<ButtonAddToCartProps> = ({count}) => {
