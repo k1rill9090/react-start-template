@@ -3,7 +3,7 @@ import styles from './Logo.module.sass'
 
 
 interface LogoProps {
-  children?: React.ReactNode
+  children: string
 }
 
 const Logo: FC<LogoProps> = ({children}) => {
