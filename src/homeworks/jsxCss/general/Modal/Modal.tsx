@@ -7,9 +7,10 @@ import cn from "clsx"
 interface ModalProps {
     visible: boolean,
     children?: React.ReactNode
+    setUnvisible: Function
 }
 
-const Modal: FC<ModalProps> = ({visible, children}) => {
+const Modal: FC<ModalProps> = ({visible, setUnvisible, children}) => {
 
     if (!visible) return null
 
@@ -19,7 +20,10 @@ const Modal: FC<ModalProps> = ({visible, children}) => {
                 <div className={styled.mainContent}>
                     {children}
                 </div>
-                <button className={styledButton.modalButton}>Закрыть</button>
+                <button 
+                    className={styledButton.modalButton}
+                    onClick={() => setUnvisible(false)}
+                    >Закрыть</button>
             </div>
         </div>
     )
