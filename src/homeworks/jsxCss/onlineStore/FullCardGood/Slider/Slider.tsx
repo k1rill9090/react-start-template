@@ -16,9 +16,9 @@ const Slider: FC<SliderProps> = ({imgs}) => {
         1024: { items: 1},
     };
     
-    const items1 = imgs.map((elem) =>  
-        <div className={styles.item} data-value="1">
-            <img 
+    const items1 = imgs.map((elem, index) =>  
+        <div className={styles.item} data-value="1" key={index}>
+            <img
                 src={elem} 
                 height='400px' 
                 width='450px'
