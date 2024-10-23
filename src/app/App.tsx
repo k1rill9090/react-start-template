@@ -1,11 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Switch from 'src/homeworks/ThemeSwitcher/Switch/Switch';
+import {useTheme} from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
+import Header from 'src/homeworks/jsxCss/general/Header/Header';
 
-function App() {
+const App = () => {
+  const {theme} = useTheme()
+
   return (
+     
     <div className="App">
-      <header className="App-header">
+      <Header>
+        <Switch/>
+      </Header>
+      <header className={`App-header-${theme}`}>
         <img src={logo} className="App-logo" alt="logo" />
         <div className='About-myself'>
           <p>
