@@ -5,7 +5,7 @@ interface ThemeProviderProps{
   children: React.ReactNode
 }
 
-export const ThemeContext = createContext(null);
+export const ThemeContext = createContext({theme: 'light', toggleTheme: null});
 
 export const useTheme = () => {
   return useContext(ThemeContext);
