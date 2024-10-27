@@ -1,23 +1,18 @@
 import React from 'react'
 import styles from './Switch.module.sass'
 import { useTheme } from '../ThemeContext/ThemeContext'
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 
 const Switch = () => {
-  const {toggleTheme} = useTheme()
+  const {theme, toggleTheme} = useTheme()
 
   return (
-    <div className={styles['container-switch']}>
-        <span>Change theme</span>
-        <label>
-            <input 
-              type="checkbox" 
-              onChange={() =>toggleTheme()}
-            />
-            <span className={styles.slider}></span>
-        </label>
-    </div>
+      <button className={styles.root} onClick={() =>toggleTheme()}>
+        {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon/>}
+      </button>
   )
 }
 
