@@ -2,15 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useTheme} from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
-import { useLang } from 'src/homeworks/LangSwitcher/LangContext';
 import Header from 'src/homeworks/jsxCss/general/Header/Header';
-import i18next from 'i18next';
-import LangSwitcher from '../homeworks/LangSwitcher/LangSwitcher';
-
 
 const App = () => {
   const {theme} = useTheme()
-  const {lang} = useLang()
 
   return (
      
@@ -19,12 +14,18 @@ const App = () => {
       <header className={`App-header-${theme}`}>
         <img src={logo} className="App-logo" alt="logo" />
         <div className='About-myself'>
-          <p>{i18next.t("aboutMyselfP1", {lng: lang})}</p>
-          <p>{i18next.t("aboutMyselfP2", {lng: lang})}</p>
-          <p>{i18next.t("aboutMyselfP3", {lng: lang})}</p>
-          <p>{i18next.t("aboutMyselfP4", {lng: lang})}</p>
-          <p>{i18next.t("aboutMyselfP5", {lng: lang})}</p>
-          <p>{i18next.t("aboutMyselfP6", {lng: lang})}</p>
+          <p>
+            Привет!
+            Меня зовут Кирилл, на данный момент я являюсь системным аналитиком и хочу попробовать себя
+            в роли frontend разработчика.
+          </p>
+          <p>
+            У меня есть небольшой опыт программирования на python (учебные проекты по backend разработке и Data science).
+          </p>
+          <p>Также есть базовые знания по html, css и JavaScript, немного знаю React.</p>
+          <p>Записался на данный курс, так как хочу углубить свои знания по React и узнать больше о фронтенд-разработке.</p>
+          <p>Рассчитываю, что полученные знания помогут мне перейти на должность frontend разработчика, ну или хотя бы писать более хорошие ТЗ :)</p>
+          <p>Мой телеграм: @kirill59rus368</p>
         </div>
       </header>
     </div>
