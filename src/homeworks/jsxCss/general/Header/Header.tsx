@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import styles from './Header.module.sass'
 import Logo from '../Logo/Logo'
-import { useTheme } from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext'
 
 
 interface HeaderProps {
@@ -9,9 +8,8 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({children}) => {
-  const {theme} = useTheme()
   return (
-    <div className={styles[`header-${theme}`]}>
+    <div className={styles.header}>
       <div className={styles.headerContent}>
           <div className={styles.logo}>
             <Logo>Lorem</Logo>
