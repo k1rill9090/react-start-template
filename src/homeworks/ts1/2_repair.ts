@@ -11,7 +11,7 @@ export const getFakeApi = async (): Promise<void> => {
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 export class SomeClass {
   set: Set<number>;
-    channel: BroadcastChannel;
+  channel: BroadcastChannel;
   constructor() {
     this.set = new Set([1]);
     this.channel = new BroadcastChannel('test-broadcast-channel');
@@ -38,14 +38,14 @@ export type Percent = {
 const getDataAmount = (data: Data): number => {
   switch (data.type) {
     case 'Money':
-        return (data.value as Money).amount;
+      return (data.value as Money).amount;
     case 'Percent':
-        return (data.value as Percent).percent;
+      return (data.value as Percent).percent;
 
     default: {
-    //   eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const unhandled: never = data.type; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
-    throw new Error(`unknown type: ${data.type}`);
+      //   eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const unhandled: never = data.type; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
+      throw new Error(`unknown type: ${data.type}`);
     }
   }
 };

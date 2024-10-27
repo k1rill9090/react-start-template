@@ -18,11 +18,10 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-
 export type CssTransform = {
-  x: number,
-  y: number,
-}
+  x: number;
+  y: number;
+};
 
 export const getTransformFromCss = (transformCssString: string): CssTransform => {
   const data = transformCssString.match(transformRegexp);
@@ -61,28 +60,27 @@ export const hex2rgb = (color: string): number[] => {
 };
 
 export type Arr<Type> = {
-  value: Type,
-  number: number,
-}
+  value: Type;
+  number: number;
+};
 
 export const getNumberedArray = <T>(arr: Array<T>): Arr<T>[] => arr.map((value, number) => ({ value, number }));
 export const toStringArray = <T>(arr: Array<T>): string[] => arr.map((value, number) => `${value}_${number}`);
 
-
 export type Customer = {
-  id: number,
-  name: string,
-  age: number,
-  isSubscribed: boolean,
-}
+  id: number;
+  name: string;
+  age: number;
+  isSubscribed: boolean;
+};
 
 export type TranformedCustomer = {
   [id_customer: number]: {
-    name: string,
-    age: number,
-    isSubscribed: boolean
-  }
-}
+    name: string;
+    age: number;
+    isSubscribed: boolean;
+  };
+};
 
 export const transformCustomers = (customers: Customer[]): TranformedCustomer => {
   return customers.reduce((acc: TranformedCustomer, customer) => {

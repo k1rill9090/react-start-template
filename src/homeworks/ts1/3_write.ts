@@ -14,18 +14,18 @@
  * */
 
 // решил использовать пакет faker для генерации случайных значений
-import { faker } from '@faker-js/faker'; 
+import { faker } from '@faker-js/faker';
 
-let idCategoryCount: number = 0;
-let idProductCount: number = 0;
-let idCostCount: number = 0;
-let idProfitCount: number = 0;
+let idCategoryCount = 0;
+let idProductCount = 0;
+let idCostCount = 0;
+let idProfitCount = 0;
 
 export type Category = {
-    id: string;
-    name: string;
-    photo?: string
-}
+  id: string;
+  name: string;
+  photo?: string;
+};
 
 /**
  * Продукт (Product) содержит
@@ -40,15 +40,15 @@ export type Category = {
  * */
 
 export type Product = {
-    id: string;
-    name: string;
-    photo: string;
-    desc?: string;
-    createdAt: string;
-    oldPrice?: number;
-    price: number;
-    category: Category;
-}
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
 
 /*
  * Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
@@ -68,14 +68,14 @@ export type Operation = Cost | Profit;
  * */
 
 export type Cost = {
-    id: string;
-    name: string;
-    desc?: string;
-    createdAt: string;
-    amount: number;
-    category: Category;
-    type: 'Cost';
-}
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Cost';
+};
 
 /*
  * Доход (Profit) содержит
@@ -89,14 +89,14 @@ export type Cost = {
  * */
 
 export type Profit = {
-    id: string;
-    name: string;
-    desc?: string;
-    createdAt: string;
-    amount: number;
-    category: Category;
-    type: 'Profit';
-}
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Profit';
+};
 
 /**
  * Создает случайный продукт (Product).
@@ -104,19 +104,19 @@ export type Profit = {
  * */
 
 export const createRandomProduct = (createdAt: string): Product => {
-    let product: Product = {
-        id: `P-${idProductCount}`,
-        name: faker.food.dish(),
-        photo: faker.image.url(),
-        desc: faker.food.description(),
-        createdAt: createdAt,
-        oldPrice: faker.number.int({min: 100, max: 1000}),
-        price: faker.number.int({min: 100, max: 1000}),
-        category: {id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory()}
-    }
-    idCategoryCount += 1;
-    idProductCount += 1;
-    return product
+  const product: Product = {
+    id: `P-${idProductCount}`,
+    name: faker.food.dish(),
+    photo: faker.image.url(),
+    desc: faker.food.description(),
+    createdAt: createdAt,
+    oldPrice: faker.number.int({ min: 100, max: 1000 }),
+    price: faker.number.int({ min: 100, max: 1000 }),
+    category: { id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory() },
+  };
+  idCategoryCount += 1;
+  idProductCount += 1;
+  return product;
 };
 
 /**
@@ -124,16 +124,20 @@ export const createRandomProduct = (createdAt: string): Product => {
  * Принимает дату создания (строка)
  * */
 export const createRandomOperation = (createdAt: string): Operation => {
-    let randomTypeOperation: boolean = Boolean(faker.number.int({min: 0, max: 1}));
-    let operation: Operation = {
-        id: randomTypeOperation ? `OC-${idCostCount}` : `OP-${idProfitCount}`,
-        name: randomTypeOperation ? "Purchase" : "Sale",
-        createdAt: createdAt,
-        desc: faker.food.description(),
-        amount: faker.number.int({min: 1, max: 10}),
-        category: {id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory()},
-        type: randomTypeOperation ? "Cost" : "Profit"
-    }
-    if (randomTypeOperation) {idCostCount += 1} else {idProfitCount += 1}
-    return operation
+  const randomTypeOperation = Boolean(faker.number.int({ min: 0, max: 1 }));
+  const operation: Operation = {
+    id: randomTypeOperation ? `OC-${idCostCount}` : `OP-${idProfitCount}`,
+    name: randomTypeOperation ? 'Purchase' : 'Sale',
+    createdAt: createdAt,
+    desc: faker.food.description(),
+    amount: faker.number.int({ min: 1, max: 10 }),
+    category: { id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory() },
+    type: randomTypeOperation ? 'Cost' : 'Profit',
+  };
+  if (randomTypeOperation) {
+    idCostCount += 1;
+  } else {
+    idProfitCount += 1;
+  }
+  return operation;
 };

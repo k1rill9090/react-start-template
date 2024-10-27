@@ -1,35 +1,35 @@
-import ShortCardGood from "./ShortCardGood";
+import ShortCardGood from './ShortCardGood';
 
-export default  {
-    title: "Homework2/OnlineStore/ShortCardGood",
-    component: ShortCardGood,
-    argTypes: {
-        sum: {
-            type: "number",
-        } ,
-        img: {
-            type: "string",
-        } ,
-        name: {
-            type: "string",
-        } ,
-        desc: {
-            type: "string",
-        } ,
-    }
-}
+export default {
+  title: 'Homework2/OnlineStore/ShortCardGood',
+  component: ShortCardGood,
+  argTypes: {
+    sum: {
+      type: 'number',
+    },
+    img: {
+      type: 'string',
+    },
+    name: {
+      type: 'string',
+    },
+    desc: {
+      type: 'string',
+    },
+  },
+};
 
 export const primary = {
-    args: {
-        sum: 120,
-        img: "https://i.pinimg.com/236x/ee/79/eb/ee79ebbf34567ecab5a1ad08c788e5bc.jpg?nii=t",
-        name: "Матовая гидрогелевая пленка на экран телефона",
-        desc: `Разнообразный и богатый опыт консультация с широким активом в значительной степени
+  args: {
+    sum: 120,
+    img: 'https://i.pinimg.com/236x/ee/79/eb/ee79ebbf34567ecab5a1ad08c788e5bc.jpg?nii=t',
+    name: 'Матовая гидрогелевая пленка на экран телефона',
+    desc: `Разнообразный и богатый опыт консультация с широким активом в значительной степени
          обуславливает создание форм развития. Таким образом рамки и место обучения кадров в
           значительной степени обуславливает создание системы обучения кадров, соответствует
            насущным потребностям. Не следует, однако забывать, что реализация намеченных плановых
             заданий позволяет оценить значение существенных финансовых и административных условий
             . Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности 
-            в значительной степени обуславливает создание систем массового участия.`
-    }
+            в значительной степени обуславливает создание систем массового участия.`,
+  },
 };
