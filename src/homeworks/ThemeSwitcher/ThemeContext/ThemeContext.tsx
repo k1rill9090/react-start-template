@@ -1,11 +1,10 @@
 import React, { createContext, useState, useContext, FC } from 'react';
 
-
-interface ThemeProviderProps{
-  children: React.ReactNode
+interface ThemeProviderProps {
+  children: React.ReactNode;
 }
 
-export const ThemeContext = createContext({theme: 'light', toggleTheme: null});
+export const ThemeContext = createContext({ theme: 'light', toggleTheme: null });
 
 export const useTheme = () => {
   return useContext(ThemeContext);
@@ -18,9 +17,5 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };

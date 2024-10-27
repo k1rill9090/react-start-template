@@ -4,7 +4,7 @@ import './app/index.css';
 import App from './app/App';
 import { ThemeProvider } from './homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n'
+import i18n from './i18n';
 import LangProvider from './homeworks/LangSwitcher/LangContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
