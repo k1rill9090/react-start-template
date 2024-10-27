@@ -1,9 +1,6 @@
 import React, { FC } from 'react'
 import Header from '../Header/Header'
 import styles from './Layout.module.sass'
-import Switch from '../../../ThemeSwitcher/Switch/Switch'
-import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext'
-import clsx from 'clsx'
 
 
 interface LayoutProps {
@@ -11,10 +8,9 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({children}) => {
-  const {theme} = useTheme()
   return (
-    <div className={clsx([styles.layout, styles[`layout-${theme}`]])}>
-            <Header />
+    <div className={styles.layout}>
+            <Header/>
             <main>{children}</main>
         
     </div>
