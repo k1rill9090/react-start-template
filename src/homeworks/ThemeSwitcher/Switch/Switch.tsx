@@ -5,7 +5,7 @@ import { useTheme } from '../ThemeContext/ThemeContext'
 
 
 const Switch = () => {
-  const {toggleTheme} = useTheme()
+  const {theme, toggleTheme} = useTheme()
 
   return (
     <div className={styles['container-switch']}>

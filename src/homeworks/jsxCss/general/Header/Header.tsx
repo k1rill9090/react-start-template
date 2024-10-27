@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
 import styles from './Header.module.sass'
 import Logo from '../Logo/Logo'
-import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext'
-import Switch from '../../../ThemeSwitcher/Switch/Switch'
+import { useTheme } from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext'
 
 
 interface HeaderProps {
@@ -17,9 +16,7 @@ const Header: FC<HeaderProps> = ({children}) => {
           <div className={styles.logo}>
             <Logo>Lorem</Logo>
           </div>
-          
-          <div className={styles.children}>
-            <Switch/>
+          <div className={children ? styles.children : null}>
               {children}
           </div>
       </div>
