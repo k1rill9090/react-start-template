@@ -3,6 +3,7 @@ import styles from './Header.module.sass'
 import Logo from '../Logo/Logo'
 import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext'
 import Switch from '../../../ThemeSwitcher/Switch/Switch'
+import LangSwitcher from '../../../LangSwitcher/LangSwitcher'
 
 
 interface HeaderProps {
@@ -20,6 +21,7 @@ const Header: FC<HeaderProps> = ({children}) => {
           
           <div className={styles.children}>
             <Switch/>
+            <LangSwitcher/>
               {children}
           </div>
       </div>
