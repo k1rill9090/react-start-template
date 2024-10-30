@@ -1,5 +1,7 @@
 .mainContent
-    // border-bottom: solid 1px black
+    border: solid 2px #696969
+    border-radius: 5px
+    margin: 25px 10px 0 10px
     box-shadow: 0 4px 23px 0 rgba(34, 60, 80, 0.2)
     // -webkit-box-shadow: 0 4px 2px -2px rgba(34, 60, 80, 0.2)
     // -moz-box-shadow: 0 4px 2px -2px rgba(34, 60, 80, 0.2)
@@ -9,7 +11,11 @@
     align-items: center
     // padding: 10px 30px 30px 10px
     padding: 30px
-    max-width: 70%
+    // max-width: 70%
+    img
+        width: 250px
+        max-height: 200px
+        object-fit: contain
 
 .goodsInfo
     font-family: 'Montserrat', sans-serif
@@ -25,3 +31,10 @@
     text-overflow: ellipsis /* Добавляем многоточие */
     max-width: 200px
     height: 50px
+
+.mainContent-light
+    color: black
+.mainContent-dark
+    color: white
+    border-color: #cdcdcd
+    background-color: #303030

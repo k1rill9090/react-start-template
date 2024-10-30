@@ -5,6 +5,7 @@ import { useTheme } from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext'
 import { useLang } from 'src/homeworks/LangSwitcher/LangContext';
 import Header from 'src/homeworks/jsxCss/general/Header/Header';
 import { t } from 'i18next';
+import ListOfGoods from 'src/homeworks/ListOfGoods/ListOfGoods';
 
 const App = () => {
   const { theme } = useTheme();
@@ -24,6 +25,9 @@ const App = () => {
           <p>{t('aboutMyselfP6', { lng: lang })}</p>
         </div>
       </header>
+      <div>
+        <ListOfGoods goods={[]}/>
+      </div>
     </div>
   );
 };
