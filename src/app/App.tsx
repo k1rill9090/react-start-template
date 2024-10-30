@@ -6,6 +6,7 @@ import { useLang } from 'src/homeworks/LangSwitcher/LangContext';
 import Header from 'src/homeworks/jsxCss/general/Header/Header';
 import { t } from 'i18next';
 import ListOfGoods from 'src/homeworks/ListOfGoods/ListOfGoods';
+import ModalButton from 'src/stories/ModalButton/ModalButton';
 
 const App = () => {
   const { theme } = useTheme();
@@ -14,7 +15,9 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+     
       <header className={`App-header-${theme}`}>
+      <ModalButton/>
         <img src={logo} className="App-logo" alt="logo" />
         <div className="About-myself">
           <p>{t('aboutMyselfP1', { lng: lang })}</p>

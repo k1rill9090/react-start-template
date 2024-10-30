@@ -8,7 +8,7 @@ const ModalButton: FC = () => {
 
   return (
     <div className={styles.main}>
-      <input className={styles.modalInput} placeholder="type something" onChange={(e) => setData(e.target.value)} />
+      <input className={styles.modalInput} placeholder="type something for modal" onChange={(e) => setData(e.target.value)} />
       <button
         onClick={() => {
           setVisible(!visible);
