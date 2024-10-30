@@ -16,10 +16,11 @@
 // решил использовать пакет faker для генерации случайных значений
 import { faker } from '@faker-js/faker';
 
-let idCategoryCount = 0;
-let idProductCount = 0;
-let idCostCount = 0;
-let idProfitCount = 0;
+let idCategoryCount = 1;
+let idProductCount = 1;
+let idCostCount = 1;
+let idProfitCount = 1;
+
 
 export type Category = {
   id: string;
