@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import styled from './Modal.module.sass';
 import styledButton from './ModalButton.module.sass';
 import cn from 'clsx';
-import { createPortal } from 'react-dom';
 
 interface ModalProps {
   visible: boolean;
@@ -11,8 +10,9 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ visible, setUnvisible, children }) => {
+  if (!visible) return null
 
-  return visible ? createPortal (
+  return (
     <div className={cn(styled.modal, styled.active)}>
       <div className={styled.modalContent}>
         <div className={styled.mainContent}>{children}</div>
@@ -20,8 +20,8 @@ const Modal: FC<ModalProps> = ({ visible, setUnvisible, children }) => {
           Закрыть
         </button>
       </div>
-    </div>, document.body
-  ) : null
+    </div>
+  )
 };
 
 export default Modal;

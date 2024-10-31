@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import Modal from '../../homeworks/jsxCss/general/Modal/Modal';
 import styles from './ModalButton.module.sass';
+import ModalContent from 'src/homeworks/jsxCss/general/Modal/ModalContent';
 
 const ModalButton: FC = () => {
   const [visible, setVisible] = useState(false);
@@ -17,9 +17,9 @@ const ModalButton: FC = () => {
       >
         Open modal
       </button>
-      <Modal visible={visible} setUnvisible={setVisible}>
+      <ModalContent visible={visible} setUnvisible={setVisible}>
         {data}
-      </Modal>
+      </ModalContent>
     </div>
   );
 };

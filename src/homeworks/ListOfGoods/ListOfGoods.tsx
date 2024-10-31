@@ -17,19 +17,15 @@ const ListOfGoods: FC<ListOfGoodsProps>= ({goods}) => {
     const addGood = () => {
         const newGood = createRandomProduct("28.10.2024");
         setGoodsArr([...goodsArr, newGood]);
-        // console.log(goodsArr)
     };
 
     const lastElem = useRef(null);
     const observer = useRef(null);
-    // console.log(lastElem)
 
     useEffect(() => {
         if (observer.current) observer.current.disconnect();
-        let callback = (entries: any, observer: any) => {
+        let callback = (entries: Array<IntersectionObserverEntry>) => {
             if (entries[0].isIntersecting) {
-                // console.log("DIV в зоне видимости");
-                // console.log(entries)
                 addGood()            
             }
         };
