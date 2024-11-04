@@ -21,7 +21,6 @@ let idProductCount = 1;
 let idCostCount = 1;
 let idProfitCount = 1;
 
-
 export type Category = {
   id: string;
   name: string;

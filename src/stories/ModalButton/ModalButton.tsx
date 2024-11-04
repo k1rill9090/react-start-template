@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import styles from './ModalButton.module.sass';
-import ModalContent from 'src/homeworks/jsxCss/general/Modal/ModalContent';
+import ModalContent from '../../homeworks/jsxCss/general/Modal/ModalContent';
 
 const ModalButton: FC = () => {
   const [visible, setVisible] = useState(false);
@@ -8,7 +8,11 @@ const ModalButton: FC = () => {
 
   return (
     <div className={styles.main}>
-      <input className={styles.modalInput} placeholder="type something for modal" onChange={(e) => setData(e.target.value)} />
+      <input
+        className={styles.modalInput}
+        placeholder="type something for modal"
+        onChange={(e) => setData(e.target.value)}
+      />
       <button
         onClick={() => {
           setVisible(!visible);

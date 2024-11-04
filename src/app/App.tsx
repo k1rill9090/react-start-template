@@ -15,9 +15,9 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-     
+
       <header className={`App-header-${theme}`}>
-      <ModalButton/>
+        <ModalButton />
         <img src={logo} className="App-logo" alt="logo" />
         <div className="About-myself">
           <p>{t('aboutMyselfP1', { lng: lang })}</p>
@@ -29,7 +29,7 @@ const App = () => {
         </div>
       </header>
       <div>
-        <ListOfGoods goods={[]}/>
+        <ListOfGoods goods={[]} />
       </div>
     </div>
   );
