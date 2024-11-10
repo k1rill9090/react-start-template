@@ -7,6 +7,7 @@ import Header from 'src/homeworks/jsxCss/general/Header/Header';
 import { t } from 'i18next';
 import ListOfGoods from 'src/homeworks/ListOfGoods/ListOfGoods';
 import ModalButton from 'src/stories/ModalButton/ModalButton';
+import ToolTip from 'src/homeworks/jsxCss/general/ToolTip/ToolTip';
 
 const App = () => {
   const { theme } = useTheme();
@@ -14,7 +15,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header/>
 
       <header className={`App-header-${theme}`}>
         <ModalButton />
@@ -28,6 +29,13 @@ const App = () => {
           <p>{t('aboutMyselfP6', { lng: lang })}</p>
         </div>
       </header>
+      <ToolTip tip='testTip'>
+          {({ref, show, hide}) => 
+            <span style={{border: "solid 1px black"}} ref={ref} onMouseEnter={show} onMouseLeave={hide}>
+              hover me
+            </span>
+          }
+        </ToolTip>
       <div>
         <ListOfGoods goods={[]} />
       </div>

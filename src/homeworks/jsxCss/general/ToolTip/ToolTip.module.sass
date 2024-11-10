@@ -1,0 +1,37 @@
+$top: 1.4rem
+
+.tip-light
+    background-color: #0c172a
+    color: #fff
+    padding: 0 10px 5px
+    border-radius: 7px
+    position: absolute
+    top: 0
+    left: 0
+.tip-light::after 
+    background-color: #0c172a
+    content: ''
+    position: absolute
+    top: $top
+    left: 50%
+    transform: translateX(-50%) rotate(45deg)
+    width: 0.5rem
+    height: 0.5rem
+
+.tip-dark
+    background-color: #f9f9f9
+    color: #2c2c2c
+    padding: 0 10px 5px
+    border-radius: 7px
+    position: absolute
+    top: 0
+    left: 0
+.tip-dark::after 
+    background-color: #f9f9f9
+    content: ''
+    position: absolute
+    top: $top
+    left: 50%
+    transform: translateX(-50%) rotate(45deg)
+    width: 0.5rem
+    height: 0.5rem
