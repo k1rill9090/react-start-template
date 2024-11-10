@@ -1,7 +1,13 @@
 import { useEffect, useRef } from "react";
 import { Product } from "../ts1/3_write";
 
-export const useObserver = (ref: React.MutableRefObject<HTMLDivElement>, callback: () => void, dependArr: Product[]) => {
+interface IuseObserver {
+  ref: React.MutableRefObject<HTMLDivElement>;
+  callback: () => void;
+  dependArr: Product[];
+}
+
+export const useObserver = (ref: IuseObserver["ref"], callback: IuseObserver["callback"], dependArr: IuseObserver["dependArr"]) => {
     const observer = useRef(null);
 
     useEffect(() => {
