@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom';
 import styles from './ToolTip.module.sass'
-import { useTheme } from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
+import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext';
 
 
 interface IChildren {
