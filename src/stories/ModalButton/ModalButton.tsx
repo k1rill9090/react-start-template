@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styles from './ModalButton.module.sass';
 import Portal from '../../homeworks/jsxCss/general/Modal/Portal';
-import Modal from 'src/homeworks/jsxCss/general/Modal/Modal';
+import Modal from '../../homeworks/jsxCss/general/Modal/Modal';
 
 
 const ModalButton: FC = () => {
