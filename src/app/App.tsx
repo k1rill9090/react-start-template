@@ -7,6 +7,7 @@ import Header from 'src/homeworks/jsxCss/general/Header/Header';
 import { t } from 'i18next';
 import ListOfGoods from 'src/homeworks/ListOfGoods/ListOfGoods';
 import ModalButton from 'src/stories/ModalButton/ModalButton';
+import Collapse from 'src/homeworks/jsxCss/general/Collapse/Collapse';
 
 const App = () => {
   const { theme } = useTheme();
@@ -28,6 +29,11 @@ const App = () => {
           <p>{t('aboutMyselfP6', { lng: lang })}</p>
         </div>
       </header>
+      <Collapse>
+        <button>button1</button>
+        <button>button2</button>
+        <button>button3</button>
+      </Collapse>
       <div>
         <ListOfGoods goods={[]} />
       </div>
