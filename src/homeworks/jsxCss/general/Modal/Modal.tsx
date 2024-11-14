@@ -10,7 +10,7 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ visible, setUnvisible, children }) => {
-  if (!visible) return null
+  if (!visible) return null;
 
   return (
     <div className={cn(styled.modal, styled.active)}>
@@ -21,7 +21,7 @@ const Modal: FC<ModalProps> = ({ visible, setUnvisible, children }) => {
         </button>
       </div>
     </div>
-  )
+  );
 };
 
 export default Modal;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import styles from './ShortCardGood.module.sass';
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
 import clsx from 'clsx';
@@ -11,18 +11,18 @@ interface ShortCardGoodProps {
   theme: string;
 }
 
-const ShortCardGood: FC<ShortCardGoodProps> = ({ sum, img, name, desc, theme }) => {
+const ShortCardGood: FC<ShortCardGoodProps> = ({ ...props }) => {
   return (
-    <div className={clsx(styles.mainContent, styles[`mainContent-${theme}`])}>
-      <img src={img} alt="фото товара" />
+    <div className={clsx(styles.mainContent, styles[`mainContent-${props.theme}`])}>
+      <img src={props.img} alt="фото товара" />
       <div className={styles.goodsInfo}>
-        <span>{name}</span>
+        <span>{props.name}</span>
         <span>
-          Цена: <b>{sum} руб.</b>
+          Цена: <b>{props.sum} руб.</b>
         </span>
         <div className={styles.desc}>
           Описание:
-          <br /> {desc}
+          <br /> {props.desc}
         </div>
       </div>
       <ButtonAddToCart count={0} />
@@ -30,4 +30,4 @@ const ShortCardGood: FC<ShortCardGoodProps> = ({ sum, img, name, desc, theme }) 
   );
 };
 
-export default ShortCardGood;
+export default memo(ShortCardGood);
