@@ -11,7 +11,7 @@ interface IChildren {
 }
 
 interface ToolTipProps {
-    children: ({}: IChildren) => React.ReactNode
+    children: (elem: IChildren) => React.ReactNode
     tip: string;
 }
 
