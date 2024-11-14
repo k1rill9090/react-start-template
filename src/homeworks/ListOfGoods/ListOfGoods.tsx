@@ -1,9 +1,10 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { createRandomProduct, Product } from '../ts1/3_write';
 import ShortCardGood from '../jsxCss/onlineStore/ShortCardGood/ShortCardGood';
 import styles from './ListOfGoods.module.sass';
 import { useTheme } from '../ThemeSwitcher/ThemeContext/ThemeContext';
 import clsx from 'clsx';
+import { useObserver } from './useObserver';
 
 interface ListOfGoodsProps {
   goods: Array<Product>;
@@ -19,18 +20,8 @@ const ListOfGoods: FC<ListOfGoodsProps> = ({ goods }) => {
   };
 
   const lastElem = useRef(null);
-  const observer = useRef(null);
 
-  useEffect(() => {
-    if (observer.current) observer.current.disconnect();
-    const callback = (entries: Array<IntersectionObserverEntry>) => {
-      if (entries[0].isIntersecting) {
-        addGood();
-      }
-    };
-    observer.current = new IntersectionObserver(callback);
-    observer.current.observe(lastElem.current);
-  }, [goodsArr]);
+  useObserver(lastElem, addGood, goodsArr);
 
   return (
     <div className={styles[`background-${theme}`]}>
