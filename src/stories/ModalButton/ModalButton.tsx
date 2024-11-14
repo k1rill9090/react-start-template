@@ -3,7 +3,6 @@ import styles from './ModalButton.module.sass';
 import Portal from '../../homeworks/jsxCss/general/Modal/Portal';
 import Modal from '../../homeworks/jsxCss/general/Modal/Modal';
 
-
 const ModalButton: FC = () => {
   const [visible, setVisible] = useState(false);
   const [data, setData] = useState('');
@@ -24,13 +23,15 @@ const ModalButton: FC = () => {
         Open modal
       </button>
 
-      {visible &&
-        <Portal 
-          container={document.body}
-          children={() => <Modal visible={visible} setUnvisible={setVisible} children={data}/>}
-        />
-      }
-      
+      {visible && (
+        <Portal container={document.body}>
+          {() => (
+            <Modal visible={visible} setUnvisible={setVisible}>
+              {data}
+            </Modal>
+          )}
+        </Portal>
+      )}
     </div>
   );
 };

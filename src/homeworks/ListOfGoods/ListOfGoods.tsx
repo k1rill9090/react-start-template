@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { createRandomProduct, Product } from '../ts1/3_write';
 import ShortCardGood from '../jsxCss/onlineStore/ShortCardGood/ShortCardGood';
 import styles from './ListOfGoods.module.sass';
@@ -21,7 +21,7 @@ const ListOfGoods: FC<ListOfGoodsProps> = ({ goods }) => {
 
   const lastElem = useRef(null);
 
-  useObserver(lastElem, addGood, goodsArr)
+  useObserver(lastElem, addGood, goodsArr);
 
   return (
     <div className={styles[`background-${theme}`]}>
