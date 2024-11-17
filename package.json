@@ -69,13 +69,16 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.5",
     "@mui/styled-engine": "^6.1.5",
+    "antd": "^5.22.1",
     "clsx": "^1.2.1",
+    "formik": "^2.4.6",
     "i18next": "^23.16.4",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.9.1",
     "react-dom": "^18.2.0",
-    "react-i18next": "^15.1.0"
+    "react-i18next": "^15.1.0",
+    "react-router-dom": "^6.28.0"
   }
 }
