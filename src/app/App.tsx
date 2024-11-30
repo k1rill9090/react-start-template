@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
 
       <header className={`App-header-${theme}`}>
         <ModalButton />

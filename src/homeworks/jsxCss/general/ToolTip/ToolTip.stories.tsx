@@ -14,21 +14,26 @@ export const primary = {
   args: {
     children: (
       <Layout>
-        <ToolTip tip='some text for tip'>
-        {({ref, show, hide}) => 
-            <span style={{border: "solid 1px black"}} ref={ref} onMouseEnter={show} onMouseLeave={hide}>
+        <ToolTip tip="some text for tip">
+          {({ ref, show, hide }) => (
+            <span style={{ border: 'solid 1px black' }} ref={ref} onMouseEnter={show} onMouseLeave={hide}>
               hover me
             </span>
-          }
+          )}
         </ToolTip>
-        <div style={{padding: ' 0 100px 0'}}>
-        <ToolTip tip='some text for tip'>
-        {({ref, show, hide}) => 
-            <div style={{border: "solid 1px black", textAlign: 'center'}} ref={ref} onMouseEnter={show} onMouseLeave={hide}>
-              one more Tooltip
-            </div>
-          }
-        </ToolTip>
+        <div style={{ padding: ' 0 100px 0' }}>
+          <ToolTip tip="some text for tip">
+            {({ ref, show, hide }) => (
+              <div
+                style={{ border: 'solid 1px black', textAlign: 'center' }}
+                ref={ref}
+                onMouseEnter={show}
+                onMouseLeave={hide}
+              >
+                one more Tooltip
+              </div>
+            )}
+          </ToolTip>
         </div>
       </Layout>
     ),
