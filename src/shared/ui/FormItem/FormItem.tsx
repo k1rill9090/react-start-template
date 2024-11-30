@@ -16,13 +16,15 @@ export type FormItemProps = {
   required?: boolean;
 };
 
-export const FormItem = memo<FormItemProps>(({ validateStatus, required, help, className, title, children }) => (
-  <div className={cn(className)}>
-    <Title required={required}>{title}</Title>
-    <Form.Item validateStatus={validateStatus} help={help}>
-      {children}
-    </Form.Item>
-  </div>
-));
+export const FormItem = memo<FormItemProps>(
+  ({ validateStatus, required, help, className, title, children }: FormItemProps) => (
+    <div className={cn(className)}>
+      <Title required={required}>{title}</Title>
+      <Form.Item validateStatus={validateStatus} help={help}>
+        {children}
+      </Form.Item>
+    </div>
+  )
+);
 
 FormItem.displayName = 'FormItem';

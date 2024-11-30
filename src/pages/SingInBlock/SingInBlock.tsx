@@ -24,7 +24,7 @@ const initialValues: AuthFormValues = {
   password: undefined,
 };
 
-export const SingInBlock = memo<SingInBlockProps>(({ className }) => {
+export const SingInBlock = memo<SingInBlockProps>(({ className }: SingInBlockProps) => {
   // const { t } = useTranslation();
   // const [signIn, { loading }] = useMutation<SignInResponse, SignInVars>(SIGN_IN, { fetchPolicy: 'no-cache' });
   // const dispatch = useDispatch();
@@ -52,7 +52,7 @@ export const SingInBlock = memo<SingInBlockProps>(({ className }) => {
         //     navigate((location.state as NavigationState)?.from || '/');
         //   })
         //   .catch(catcher);
-        alert('Пользователь авторизован')
+        alert('Пользователь авторизован');
       },
       validate: (values) => {
         const errors = {} as AuthFormErrors;
@@ -82,8 +82,8 @@ export const SingInBlock = memo<SingInBlockProps>(({ className }) => {
   return (
     <div className={cn(className)}>
       <AuthForm formManager={formik} />
-      <div >
-        <Button  type="primary" onClick={submitForm}>
+      <div>
+        <Button type="primary" onClick={submitForm}>
           Войти
         </Button>
       </div>

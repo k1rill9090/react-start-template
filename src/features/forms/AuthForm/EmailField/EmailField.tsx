@@ -22,7 +22,18 @@ export type EmailFieldProps = Pick<AuthFormProps, 'className' | 'disabled' | 'au
 const prefix = <UserOutlined />;
 
 export const EmailField = memo<EmailFieldProps>(
-  ({ className, onChange, onBlur, onPressEnter, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
+  ({
+    className,
+    onChange,
+    onBlur,
+    onPressEnter,
+    autoFocusElement,
+    touched,
+    value,
+    errors,
+    disabled,
+    submitCount,
+  }: EmailFieldProps) => {
     const { t } = useTranslation();
 
     const { validateStatus, help } = getValidates(errors, touched, submitCount);

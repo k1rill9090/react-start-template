@@ -22,7 +22,17 @@ export type PasswordFieldProps = Pick<AuthFormProps, 'className' | 'disabled'> &
 const prefix = <LockOutlined className="site-form-item-icon" />;
 
 export const PasswordField = memo<PasswordFieldProps>(
-  ({ className, onChange, onBlur, onPressEnter, touched, value, errors, disabled, submitCount }) => {
+  ({
+    className,
+    onChange,
+    onBlur,
+    onPressEnter,
+    touched,
+    value,
+    errors,
+    disabled,
+    submitCount,
+  }: PasswordFieldProps) => {
     const { t } = useTranslation();
 
     const { validateStatus, help } = getValidates(errors, touched, submitCount);

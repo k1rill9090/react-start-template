@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Product } from '../ts1/3_write';
 
-
 interface IuseObserver {
   ref: React.MutableRefObject<HTMLDivElement>;
   callback: () => void;
