@@ -42,7 +42,7 @@ const ProductForm: FC = () => {
   };
   return (
     <>
-      <h2>Create product</h2>
+      <h3>Create product</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formContent}>
         <div>
           <input

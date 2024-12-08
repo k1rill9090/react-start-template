@@ -8,7 +8,7 @@ interface ShortCardGoodProps {
   img: string;
   name: string;
   desc: string;
-  theme: string;
+  theme?: string;
 }
 
 const ShortCardGood: FC<ShortCardGoodProps> = ({ ...props }) => {

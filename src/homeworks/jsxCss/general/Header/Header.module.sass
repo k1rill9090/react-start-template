@@ -1,14 +1,15 @@
+
 .header-light
     position: sticky
     top: 0
     width: 100%
-    background-color: #e5f7fee8
+    background-color: #e5f7fe
 
 .header-dark
     position: sticky
     top: 0
     width: 100%
-    background-color: #585858e8
+    background-color: #585858
     color: white
 
 .headerContent
@@ -18,14 +19,33 @@
     padding-left: 3rem
     padding-bottom: 1rem
 
+
 .header hr
     margin: 0
     
 .children
+    margin-left: 20px
     display: flex
     flex-direction: row
     align-items: center
+    gap: 20px
+    width: 300px
     // padding: 10px
+
+.link
+    text-decoration: none
+    color: black
+    height: 22px
+    width: 80px
+    text-align: center
+    &:hover
+        border-bottom: 2px solid #0000007a
+    
+.active
+    border-bottom: 2px solid #00157b
+    font-weight: 500
+    
+    
 
 .logo
     margin-right: 100px
