@@ -6,14 +6,12 @@ import { useTheme } from '../ThemeSwitcher/ThemeContext/ThemeContext';
 import clsx from 'clsx';
 import { useObserver } from './useObserver';
 
-interface ListOfGoodsProps {
-  goods: Array<Product>;
-}
 
-const ListOfGoods: FC<ListOfGoodsProps> = ({ goods }) => {
+
+const ListOfGoods = () => {
   const { theme } = useTheme();
 
-  const [goodsArr, setGoodsArr] = useState(goods);
+  const [goodsArr, setGoodsArr] = useState([]);
   const addGood = () => {
     const newGood = createRandomProduct('28.10.2024');
     setGoodsArr([...goodsArr, newGood]);
