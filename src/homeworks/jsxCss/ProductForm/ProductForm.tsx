@@ -41,7 +41,7 @@ const ProductForm: FC = () => {
     }
   };
   return (
-    <>
+    <div className={styles.layout}>
       <h3>Create product</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formContent}>
         <div>
@@ -108,7 +108,7 @@ const ProductForm: FC = () => {
 
         <button type="submit">Create</button>
       </form>
-    </>
+    </div>
   );
 };
 

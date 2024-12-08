@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './app/index.css';
+import './app/index.sass';
 import App from './app/App';
 import { ThemeProvider } from './homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
 import { I18nextProvider } from 'react-i18next';

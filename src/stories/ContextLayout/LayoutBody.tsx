@@ -1,11 +1,12 @@
 import React from 'react';
 import { t } from 'i18next';
 import { useLang } from '../../homeworks/LangSwitcher/LangContext';
+import styles from './LayoutBody.module.sass'
 
 const LayoutBody = () => {
   const { lang } = useLang();
   return (
-    <div>
+    <div className={styles.context}>
       <p>{t('aboutMyselfP1', { lng: lang })}</p>
       <p>{t('aboutMyselfP2', { lng: lang })}</p>
       <p>{t('aboutMyselfP3', { lng: lang })}</p>

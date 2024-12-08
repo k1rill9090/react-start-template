@@ -1,3 +1,7 @@
+@import "src/app/App.sass"
+    
+
+
 .modal
     position: fixed
     top: 0
@@ -22,6 +26,8 @@
     min-width: 30%
     min-height: 90px
     // max-height: 900px
+    +theme(background-color, mainBg)
+    +theme(color, text)
     
 .mainContent
     margin-bottom: 30px
