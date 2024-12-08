@@ -3,6 +3,7 @@ import { ThemeProvider } from '../../homeworks/ThemeSwitcher/ThemeContext/ThemeC
 import LangProvider from '../../homeworks/LangSwitcher/LangContext';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../../i18n';
+import { BrowserRouter } from 'react-router-dom';
 
 interface ContextLayoutProps {
   children: React.ReactNode;
@@ -10,13 +11,11 @@ interface ContextLayoutProps {
 
 const ContextLayout: FC<ContextLayoutProps> = ({ children }) => {
   return (
-    <div>
       <ThemeProvider>
         <I18nextProvider i18n={i18n} defaultNS={'translation'}>
           <LangProvider>{children}</LangProvider>
         </I18nextProvider>
       </ThemeProvider>
-    </div>
   );
 };
 

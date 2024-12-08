@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styles from './Logo.module.sass';
+import LogoSvg from './LogoSvg';
 
 interface LogoProps {
   children: string;
@@ -8,7 +9,8 @@ interface LogoProps {
 const Logo: FC<LogoProps> = ({ children }) => {
   return (
     <div className={styles.logo}>
-      <img src={require('./logo.svg')} />
+      {/* <img src={require('./logo.svg')} /> */}
+      <LogoSvg/>
       <div className={styles.children}>{children}</div>
     </div>
   );

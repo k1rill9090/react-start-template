@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styles from './Header.module.sass';
 import Logo from '../Logo/Logo';
-import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext';
 import Switch from '../../../ThemeSwitcher/Switch/Switch';
 import LangSwitcher from '../../../LangSwitcher/LangSwitcher';
 import { NavLink } from 'react-router-dom';
@@ -12,9 +11,8 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ children }) => {
-  const { theme } = useTheme();
   return (
-    <div className={styles[`header-${theme}`]}>
+    <div className={styles.header}>
       <div className={styles.headerContent}>
         <div className={styles.logo}>
           <Logo>Lorem</Logo>
@@ -28,8 +26,10 @@ const Header: FC<HeaderProps> = ({ children }) => {
           <NavLink to={'/cart'} className={({isActive}) => (isActive ? clsx(styles.link, styles.active) : styles.link)}>Корзина</NavLink>
           {children}
         </div>
+        
       </div>
       <hr />
+      
     </div>
   );
 };

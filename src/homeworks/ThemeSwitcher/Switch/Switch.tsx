@@ -9,7 +9,7 @@ const Switch = () => {
 
   return (
     <button className={styles.root} onClick={() => toggleTheme()}>
-      {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+      {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon style={{color: 'white'}}/>}
     </button>
   );
 };

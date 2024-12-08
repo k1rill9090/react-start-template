@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './ToolTip.module.sass';
-import { useTheme } from '../../../ThemeSwitcher/ThemeContext/ThemeContext';
 
 interface IChildren {
   ref: React.MutableRefObject<HTMLInputElement>;
@@ -15,7 +14,6 @@ interface ToolTipProps {
 }
 
 const ToolTip: FC<ToolTipProps> = ({ children, tip }) => {
-  const { theme } = useTheme();
   const triggerRef = useRef(null);
   const tipRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +36,7 @@ const ToolTip: FC<ToolTipProps> = ({ children, tip }) => {
       {children({ ref: triggerRef, show, hide })}
       {isOpen &&
         createPortal(
-          <div ref={tipRef} className={styles[`tip-${theme}`]}>
+          <div ref={tipRef} className={styles.tip}>
             {tip}
           </div>,
           document.body

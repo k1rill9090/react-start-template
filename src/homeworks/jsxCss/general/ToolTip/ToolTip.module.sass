@@ -1,7 +1,10 @@
+@import "src/app/App.sass"
+
+    
 $top: 1.5rem
 $padding: 5px 10px
 
-.tip-light
+.tip
     background-color: #0c172a
     color: #fff
     padding: $padding
@@ -9,26 +12,11 @@ $padding: 5px 10px
     position: absolute
     top: 0
     left: 0
-.tip-light::after 
+    +theme(background-color, inverseBg)
+    +theme(color, inverseText)
+.tip::after 
+    +theme(background-color, inverseBg)
     background-color: #0c172a
-    content: ''
-    position: absolute
-    top: $top
-    left: 50%
-    transform: translateX(-50%) rotate(45deg)
-    width: 0.5rem
-    height: 0.5rem
-
-.tip-dark
-    background-color: #f9f9f9
-    color: #2c2c2c
-    padding: $padding
-    border-radius: 7px
-    position: absolute
-    top: 0
-    left: 0
-.tip-dark::after 
-    background-color: #f9f9f9
     content: ''
     position: absolute
     top: $top

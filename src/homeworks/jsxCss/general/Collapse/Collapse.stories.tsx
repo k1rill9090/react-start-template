@@ -13,7 +13,7 @@ export default meta;
 export const primary = {
   args: {
     children: (
-      <Layout>
+      <ContextLayout>
         <Collapse>
           <ul>
             <li>page1</li>
@@ -22,7 +22,7 @@ export const primary = {
             <li>page4</li>
           </ul>
         </Collapse>
-      </Layout>
+      </ContextLayout>
     ),
   },
 };

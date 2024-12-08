@@ -1,3 +1,4 @@
+@import "src/app/App.sass"
 .mainContent
     // border: 2px solid black
     display: flex
@@ -11,11 +12,13 @@
 
 .addProductButton
     width: 500px
-    border: 1px solid #000000
+    border: 1px solid
     border-radius: 5px
     background-color: #ffffff
     padding: 10px
     font-size: 14px
+    +theme(background-color, mainBg)
+    +theme(color, text)
     &:hover
         cursor: pointer
-        background-color: #f6f6f6
+        +theme(background-color, bg)

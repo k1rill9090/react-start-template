@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
-import { useTheme } from 'src/homeworks/ThemeSwitcher/ThemeContext/ThemeContext';
+import './App.sass';
 import { useLang } from 'src/homeworks/LangSwitcher/LangContext';
 import { t } from 'i18next';
-import {Navigate, Route, Routes } from 'react-router-dom';
+import {Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import Layout from 'src/homeworks/jsxCss/general/Layout/Layout';
 import { routes } from 'src/config/routes';
 
@@ -13,7 +12,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path='/' element={<Layout/>}>
+      <Route path='/' element={<Layout><Outlet/></Layout>}>
         {routes.map(elem => {
           return (
             <Route 
