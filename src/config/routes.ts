@@ -12,7 +12,7 @@ export const routes = [
         component: Products
     },
     {
-        path: '/products/create',
+        path: '/create-product',
         component: Products
     },
     {

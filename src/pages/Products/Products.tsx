@@ -12,13 +12,13 @@ const Products = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (currentUrl.pathname === '/products/create') {
+    if (currentUrl.pathname === '/create-product') {
       setIsVisible(true)
     }
   },[])
 
   const openModal = (state: boolean) => {
-    navigate('create')
+    navigate('/create-product')
     setIsVisible(state)
   }
   const closeModal = (state: boolean) => {
