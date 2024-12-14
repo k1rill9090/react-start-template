@@ -1,16 +1,21 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './ProductForm.module.sass';
+import { createRandomProduct, Product } from 'src/homeworks/ts1/3_write';
+import { useDispatch } from 'react-redux';
+import { addProduct } from 'src/store/slices/products/productsSlice';
 
 interface Iform {
   name: string;
   photo: string;
   desc: string;
   price: number;
-  category: string;
+  category: Product['category']["name"];
 }
 
+
 const ProductForm: FC = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -20,6 +25,9 @@ const ProductForm: FC = () => {
 
   const onSubmit = (data: Iform) => {
     console.log(data);
+    dispatch(addProduct(createRandomProduct(
+      '28.10.2024', data.name, data.photo, data.desc, data.price, data.category
+    )));
     alert('Данные сохранены');
     reset();
   };
@@ -40,6 +48,8 @@ const ProductForm: FC = () => {
         return <span className={styles.errorText} />;
     }
   };
+  
+
   return (
     <div className={styles.layout}>
       <h3>Create product</h3>
