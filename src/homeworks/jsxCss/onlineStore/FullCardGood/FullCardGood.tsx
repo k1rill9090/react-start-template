@@ -28,7 +28,7 @@ const FullCardGood: FC<FullCardGoodProps> = ({ sum, img, name, categoryName, des
           <span>Описание</span>
           {desc}
         </div>
-        <ButtonAddToCart count={0} />
+        <ButtonAddToCart count={0} idProduct=''/>
       </div>
     </div>
   );

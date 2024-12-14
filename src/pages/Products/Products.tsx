@@ -34,7 +34,7 @@ const Products = () => {
         >
           Добавить товар
         </button>
-        {isVisible &&         <Portal container={document.body}>
+        {isVisible && <Portal container={document.body}>
             {
                 () => 
                     <Modal visible={isVisible} setUnvisible={closeModal}>

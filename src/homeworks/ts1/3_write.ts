@@ -103,16 +103,24 @@ export type Profit = {
  * Принимает дату создания (строка)
  * */
 
-export const createRandomProduct = (createdAt: string): Product => {
+export const createRandomProduct = (
+  createdAt: string,
+  name: Product["name"] = faker.food.dish(),
+  photo: Product["photo"] = faker.image.url(),
+  desc: Product["desc"] = faker.food.description(),
+  price: Product["price"] = faker.number.int({ min: 100, max: 1000 }),
+  categoryName: Product["category"]["name"] = faker.food.ethnicCategory(),
+  oldPrice: Product["oldPrice"] = faker.number.int({ min: 100, max: 1000 })
+): Product => {
   const product: Product = {
     id: `P-${idProductCount}`,
-    name: faker.food.dish(),
-    photo: faker.image.url(),
-    desc: faker.food.description(),
+    name: name,
+    photo: photo,
+    desc: desc,
     createdAt: createdAt,
-    oldPrice: faker.number.int({ min: 100, max: 1000 }),
-    price: faker.number.int({ min: 100, max: 1000 }),
-    category: { id: `C-${idCategoryCount}`, name: faker.food.ethnicCategory() },
+    oldPrice: oldPrice,
+    price: price,
+    category: { id: `C-${idCategoryCount}`, name: categoryName},
   };
   idCategoryCount += 1;
   idProductCount += 1;
