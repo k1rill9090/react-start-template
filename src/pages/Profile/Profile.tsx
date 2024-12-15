@@ -1,11 +1,14 @@
 import React from 'react'
-import UserProfile from 'src/homeworks/jsxCss/UserProfile/UserProfile'
+import styles from './Profile.module.sass'
+import MyAuthForm from 'src/homeworks/jsxCss/MyAuthForm/MyAuthForm'
+
 
 const Profile = () => {
+
   return (
-    <>
-    <UserProfile/>
-    </>
+    <div className={styles.form}>
+      <MyAuthForm/>
+    </div>
     
   )
 }

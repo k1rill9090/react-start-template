@@ -1,13 +1,21 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './MyAuthForm.module.sass';
+import { useDispatch } from 'react-redux';
+import { generateToken } from 'src/store/slices/token/token';
+import { validateUser } from './validateUser';
+import { setProfile } from 'src/store/slices/profile/profile';
+import { useNavigate } from 'react-router-dom';
 
-interface Iform {
+
+export interface Iform {
   email: string;
   password: string;
 }
 
 const MyAuthForm: FC = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -16,9 +24,15 @@ const MyAuthForm: FC = () => {
   } = useForm<Iform>({ mode: 'onChange' });
 
   const onSubmit = (data: Iform) => {
-    console.log(data);
-    alert('Пользователь авторизован');
-    reset();
+    if (validateUser(data)) {
+      dispatch(setProfile(data))
+      dispatch(generateToken())
+      reset();
+      navigate('/profile')
+    } else {
+      alert('Invalid email or password');
+    }
+
   };
 
   const validation = (err: string, fields: { name: string; value?: string }) => {
