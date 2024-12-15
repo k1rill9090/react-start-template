@@ -21,6 +21,7 @@ $light: (
   borderColor3: $color1,
   bgHeader: #e5f7fe,
   inverseBg: #282828,
+  forButton: #c1c1c1
 );
 
 // Переменные для темной темы
@@ -45,4 +46,5 @@ $dark: (
   borderColor3: $color1,
   bgHeader: #381820,
   inverseBg: #f3f4f6,
+  forButton: #5d5d68
 );

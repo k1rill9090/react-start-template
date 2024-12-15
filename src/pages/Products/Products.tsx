@@ -5,8 +5,13 @@ import ListOfGoods from 'src/homeworks/ListOfGoods/ListOfGoods'
 import Portal from 'src/homeworks/jsxCss/general/Modal/Portal'
 import Modal from 'src/homeworks/jsxCss/general/Modal/Modal'
 import ProductForm from 'src/homeworks/jsxCss/ProductForm/ProductForm'
+import { useDispatch, useSelector } from 'react-redux'
+import { generateToken, removeToken } from 'src/store/slices/token/token'
+import { selectProfile } from 'src/store/slices/profile/profile'
 
 const Products = () => {
+  const getUser = useSelector(selectProfile)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const currentUrl = useLocation()
   const [isVisible, setIsVisible] = useState(false)
@@ -28,12 +33,16 @@ const Products = () => {
   return (
     <div className={styles.mainContent}>
       <div>
-        <button 
-          className={styles.addProductButton}
-          onClick={() => openModal(true)}
-        >
-          Добавить товар
-        </button>
+        {
+          getUser !== null && getUser.role=== 'admin'
+          &&
+          <button 
+            className={styles.addProductButton}
+            onClick={() => openModal(true)}
+          >
+            Добавить товар
+          </button>
+        }
         {isVisible && <Portal container={document.body}>
             {
                 () => 
