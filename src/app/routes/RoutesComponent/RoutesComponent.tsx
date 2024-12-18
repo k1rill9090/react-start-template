@@ -11,8 +11,7 @@ interface RoutesComponentProps {
 
 const RoutesComponent: FC<RoutesComponentProps> = ({children}) => {
   const getUser = useSelector(selectProfile)
-  const role = getUser !== null ? getUser.role  : "user"
-  console.log(role)
+  const role = getUser?.role ?? "user"
   return (
     <Routes>
       <Route path='/' element={children}>
