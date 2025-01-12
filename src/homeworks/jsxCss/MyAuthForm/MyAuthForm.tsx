@@ -51,7 +51,7 @@ const MyAuthForm: FC = () => {
   };
 
   return (
-    <>
+    <div className={styles.mainContent}>
       <h2>Авторизация</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formContent}>
         <div>
@@ -82,9 +82,10 @@ const MyAuthForm: FC = () => {
             value: 'must be 8 characters long, contain a capital letter and a special characters',
           })}
         </div>
-        <button type="submit">Sign in</button>
+        <button type="submit">Войти</button>
       </form>
-    </>
+      <div className={styles.regButton} onClick={() => navigate("/register")}>Зарегистрироваться</div>
+    </div>
   );
 };
 

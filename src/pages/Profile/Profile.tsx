@@ -7,7 +7,7 @@ const Profile = () => {
 
   return (
     <div className={styles.form}>
-      <MyAuthForm/>
+      <MyAuthForm />
     </div>
     
   )

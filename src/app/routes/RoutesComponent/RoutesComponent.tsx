@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { routes } from 'src/config/routes'
+import ErrorPage from 'src/pages/ErrorPage/ErrorPage'
 import { selectProfile } from 'src/store/slices/profile/profile'
 
 
@@ -31,6 +32,7 @@ const RoutesComponent: FC<RoutesComponentProps> = ({children}) => {
             />
         )}
         <Route index element={<Navigate to="/products" />} />
+        <Route path='*' element={<ErrorPage/>} />
       </Route>
     </Routes>
   )

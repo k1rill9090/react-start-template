@@ -14,7 +14,7 @@ export const primary = {
   args: {
     children: (
       <div className={styles.story}>
-        <MyAuthForm />
+        <MyAuthForm/>
       </div>
     ),
   },

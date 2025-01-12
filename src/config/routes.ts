@@ -1,3 +1,4 @@
+import RegForm from "src/homeworks/jsxCss/RegForm/RegForm";
 import UserProfile from "src/homeworks/jsxCss/UserProfile/UserProfile";
 import Cart from "src/pages/Cart/Cart";
 import ErrorForbidden from "src/pages/ErrorForbidden/ErrorForbidden";
@@ -40,5 +41,11 @@ export const routes = [
         component: ErrorForbidden,
         auth: false,
         role:'user',
-    }
+    },
+    {
+        path: '/register',
+        component: RegForm,
+        auth: false,
+        role:'user',
+    },
 ]
