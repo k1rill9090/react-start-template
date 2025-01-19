@@ -8,6 +8,8 @@ export const initialStateReg = {
     data: {status: 0, errors: {message: ""}, data: {}}
 }
 
+export type TypeInitialStateReg = typeof initialStateReg
+
 const regSlice = createSlice({
     name: "registration",
     initialState: initialStateReg,
