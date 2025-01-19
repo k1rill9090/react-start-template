@@ -5,6 +5,7 @@ import { Iform } from '../RegFormUseEffect/RegFormNative';
 import { useForm } from 'react-hook-form';
 import styles from './RegFormSaga.module.sass';
 import { clearRegState, getRegInfo, regUser } from 'src/store/slices/registration/registration';
+import useCheckRegStatus from 'src/app/hooks/useCheckRegStatus';
 
 const RegFormSaga = () => {
     const dispatch = useDispatch()
@@ -21,20 +22,7 @@ const RegFormSaga = () => {
       dispatch(regUser({email: data.email, password: data.password}))
     };
 
-    useEffect(() => {
-      if (regStatus.status === 'complete') {
-        if (regStatus.data.status !== 200) {
-          alert(`ОШИБКА: ${regStatus.data.errors.message}`)
-          dispatch(clearRegState())
-        } else {
-          alert('Учетная запись создана!');
-          navigate('/login')
-          dispatch(clearRegState())
-        }
-        
-      }
-      
-    }, [regStatus])
+    useCheckRegStatus(regStatus)
   
     return (
       <>
