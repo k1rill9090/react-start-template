@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './MyAuthForm.module.sass';
-import { useDispatch } from 'react-redux';
-import { generateToken } from 'src/store/slices/token/token';
-import { validateUser } from './validateUser';
+import { useDispatch, useSelector } from 'react-redux';
+import { initialActionGetToken, selectToken } from 'src/store/slices/token/token';
+// import { validateUser } from './validateUser';
 import { setProfile } from 'src/store/slices/profile/profile';
 import { useNavigate } from 'react-router-dom';
+import useCheckAuth from 'src/app/hooks/useCheckAuth';
 
 
 export interface Iform {
@@ -15,7 +16,10 @@ export interface Iform {
 
 const MyAuthForm: FC = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const authStatus = useSelector(selectToken)
+
+  
   const {
     register,
     handleSubmit,
@@ -24,16 +28,11 @@ const MyAuthForm: FC = () => {
   } = useForm<Iform>({ mode: 'onChange' });
 
   const onSubmit = (data: Iform) => {
-    if (validateUser(data)) {
-      dispatch(setProfile(data))
-      dispatch(generateToken())
-      reset();
-      navigate('/profile')
-    } else {
-      alert('Invalid email or password');
-    }
-
+    dispatch(initialActionGetToken(data))
+    reset();
   };
+
+  useCheckAuth(authStatus);
 
   const validation = (err: string, fields: { name: string; value?: string }) => {
     switch (err) {
@@ -74,7 +73,7 @@ const MyAuthForm: FC = () => {
             className={errors.password?.type ? styles.errOutline : styles.field}
             {...register('password', {
               required: true,
-              pattern: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
+              // pattern: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
             })}
           />
           {validation(errors.password?.type, {
