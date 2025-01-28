@@ -1,10 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { UserType } from "src/homeworks/jsxCss/MyAuthForm/validateUser";
 import { RootState } from "../../store";
-// import { Iform } from "src/homeworks/jsxCss/MyAuthForm/MyAuthForm";
 
 
-// import fixUsers from "src/store/users.json";
 
 export type Profile = {
     status: string ;
@@ -14,13 +11,12 @@ export type Profile = {
     role?: string | null;
 }
 
-// если нет id в localStorage, то создаем нового пользователя
 const initialState: Profile = {
     status: "",
     id: "",
     email: '',
     name: '',
-    role: 'user',
+    role: 'admin',
 }
 
 const profileSlice = createSlice({

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { initialGetProfileSaga, removeProfile, selectProfile } from 'src/store/slices/profile/profile';
 import { removeToken, selectToken } from 'src/store/slices/token/token';
 import { useNavigate } from 'react-router-dom';
+import { clearProducts } from 'src/store/slices/products/productsSlice';
 
 const UserProfile = () => {
   const user = useSelector(selectProfile)
@@ -26,7 +27,8 @@ const UserProfile = () => {
     <div className={styles.userProfile}>
       <button className={styles.btn} onClick={() => {
         dispatch(removeToken());
-        dispatch(removeProfile())
+        dispatch(removeProfile());
+        dispatch(clearProducts());
         navigate('/login')
       }}>выйти</button>
       <h2>Профиль пользователя</h2>

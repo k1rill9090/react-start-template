@@ -28,8 +28,8 @@ const token = localStorage.getItem("token");
                     return(
                         {
                             status: "error",
-                            email: null,
-                            id: null,
+                            email: '',
+                            id: '',
                         }
                     )
                     

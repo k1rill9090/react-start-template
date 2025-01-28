@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { createRandomProduct, Product } from '../ts1/3_write';
 import ShortCardGood from '../jsxCss/onlineStore/ShortCardGood/ShortCardGood';
 import styles from './ListOfGoods.module.sass';
@@ -6,7 +6,7 @@ import { useTheme } from '../ThemeSwitcher/ThemeContext/ThemeContext';
 import clsx from 'clsx';
 import { useObserver } from './useObserver';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct, selectProducts } from 'src/store/slices/products/productsSlice';
+import { addProduct, initialGetProductsSaga, selectProducts } from 'src/store/slices/products/productsSlice';
 import { productInCart, productInCartType, selectCart } from 'src/store/slices/cart/cartSlice';
 
 
@@ -17,22 +17,19 @@ const ListOfGoods = () => {
   const cartContent = useSelector(productInCart)
   const { theme } = useTheme();
 
-  const [goodsArr, setGoodsArr] = useState([]);
   const addGood = () => {
-    const newGood = createRandomProduct('28.10.2024');
-    setGoodsArr([...goodsArr, newGood]);
-    dispatch(addProduct(newGood));
+    dispatch(initialGetProductsSaga());
   };
 
   const lastElem = useRef(null);
 
-  useObserver(lastElem, addGood, goodsArr);
+  useObserver(lastElem, addGood, listProducts.products);
 
   return (
     <div >
       <h2>Список товаров</h2>
       <div>
-        {listProducts.map((p) => (
+        {listProducts.products.map((p) => (
           <ShortCardGood 
             key={p.id} 
             id={p.id} 

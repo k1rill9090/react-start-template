@@ -20,7 +20,7 @@ function* authSaga() {
                     {
                         status: 'success',
                         token: ans.data.token,
-                        error: null,
+                        error: '',
                     }
                 )
             }
@@ -29,7 +29,7 @@ function* authSaga() {
                 return(
                     {
                         status: 'error',
-                        token: null,
+                        token: '',
                         error: err.message === 'Network Error' ? err.message : err.response.data.errors[0].message,
                     }
                 )
