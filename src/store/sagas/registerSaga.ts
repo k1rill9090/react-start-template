@@ -14,7 +14,7 @@ type dataType = typeof initialStateReg.payload
                 {
                     email: data.email,
                     password: data.password,
-                    command_id: COMMAND_ID
+                    commandId: COMMAND_ID
                 }
             ).then(
                 (ans) => {return({status: ans.status, errors: {message: ""}, data: ans.data})}

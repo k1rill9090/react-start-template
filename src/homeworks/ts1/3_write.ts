@@ -47,7 +47,7 @@ export type Product = {
   createdAt: string;
   oldPrice?: number;
   price: number;
-  category: Category;
+  category: Category | null;
 };
 
 /*
@@ -104,7 +104,6 @@ export type Profit = {
  * */
 
 export const createRandomProduct = (
-  createdAt: string,
   name: Product["name"] = faker.food.dish(),
   photo: Product["photo"] = faker.image.url(),
   desc: Product["desc"] = faker.food.description(),
@@ -117,7 +116,7 @@ export const createRandomProduct = (
     name: name,
     photo: photo,
     desc: desc,
-    createdAt: createdAt,
+    createdAt: new Date().toDateString(),
     oldPrice: oldPrice,
     price: price,
     category: { id: `C-${idCategoryCount}`, name: categoryName},

@@ -10,11 +10,11 @@
     left: 0
     display: none
     background-color: rgba(0, 0, 0, 0.5)
+
 .active
     display: flex
     justify-content: center
     align-items: center
-    // margin: 0 auto
 
 .modalContent
     text-align: center
@@ -25,14 +25,19 @@
     border-radius: 14px
     min-width: 30%
     min-height: 90px
-    // max-height: 900px
     +theme(background-color, mainBg)
     +theme(color, text)
+    overflow-y: auto
+    max-height: 70%
+    &::-webkit-scrollbar
+        width: 7px
+        margin-right: 10px
+    &::-webkit-scrollbar-track
+        background: #b6b6b6
+    &::-webkit-scrollbar-thumb
+        background-color: #363636
+        border-radius: 20px
     
 .mainContent
     margin-bottom: 30px
-    font-size: 2rem
-    // height: 150px
-
-// @media (max-width: 480px)
-    
+    font-size: 2rem    

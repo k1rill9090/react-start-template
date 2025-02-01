@@ -16,7 +16,7 @@ const initialState: Profile = {
     id: "",
     email: '',
     name: '',
-    role: 'admin',
+    role: 'user',
 }
 
 const profileSlice = createSlice({
@@ -31,6 +31,7 @@ const profileSlice = createSlice({
             state.id = action.payload.id;
             state.email = action.payload.email;
             state.name = action.payload.name;
+            state.role = 'admin'
         },
         removeProfile: () => {
             return initialState

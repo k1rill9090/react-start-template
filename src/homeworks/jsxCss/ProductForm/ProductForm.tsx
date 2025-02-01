@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './ProductForm.module.sass';
 import { createRandomProduct, Product } from 'src/homeworks/ts1/3_write';
 import { useDispatch } from 'react-redux';
-import { addProduct } from 'src/store/slices/products/productsSlice';
+import { addProduct, clearAddPRoductStatus, getProduct, initialGetProductsSaga } from 'src/store/slices/products/productsSlice';
+import useCheckCreateProductStatus from 'src/app/hooks/useCheckCreateProductStatus';
+import { useNavigate } from 'react-router-dom';
 
 interface Iform {
   name: string;
@@ -15,6 +17,7 @@ interface Iform {
 
 
 const ProductForm: FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
     register,
@@ -24,13 +27,17 @@ const ProductForm: FC = () => {
   } = useForm<Iform>({ mode: 'onSubmit' });
 
   const onSubmit = (data: Iform) => {
-    console.log(data);
-    dispatch(addProduct(createRandomProduct(
-      '28.10.2024', data.name, data.photo, data.desc, data.price, data.category
-    )));
-    alert('Данные сохранены');
+    dispatch(addProduct({
+      name: data.name,
+      photo: data.photo,
+      desc: data.desc,
+      price: data.price,
+      categoryId: "6515abc8351375825319dcc5",
+    }));
     reset();
   };
+
+  useCheckCreateProductStatus();
 
   const validation = (err: string, fields: { name: string; value?: string }) => {
     switch (err) {
@@ -105,14 +112,14 @@ const ProductForm: FC = () => {
         </div>
 
         <div>
-          <input
+          {/* <input
             placeholder="Category"
             type="text"
             className={errors.category?.type ? styles.errOutline : styles.field}
             {...register('category', {
               required: true,
             })}
-          />
+          /> */}
           {validation(errors.category?.type, { name: 'Category' })}
         </div>
 
