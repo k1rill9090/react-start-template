@@ -4,6 +4,7 @@ import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectCart } from 'src/store/slices/cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 interface ShortCardGoodProps {
@@ -17,8 +18,8 @@ interface ShortCardGoodProps {
 }
 
 const ShortCardGood: FC<ShortCardGoodProps> = ({ ...props }) => {
-  const cartContent = useSelector(selectCart)
-    
+  const token = localStorage.getItem('token')    
+  const navigate = useNavigate()
 
   return (
     <div className={clsx(styles.mainContent)}>
@@ -33,10 +34,17 @@ const ShortCardGood: FC<ShortCardGoodProps> = ({ ...props }) => {
           <br /> {props.desc}
         </div>
       </div>
-      <ButtonAddToCart 
-        count={props.quantity}
-        idProduct={props.id}
-      />
+      {
+        token ?
+        <ButtonAddToCart 
+          count={props.quantity}
+          idProduct={props.id}
+        />
+        :
+        <button className={styles.authBtn} onClick={() => navigate('/login')}>
+          Авторизуйтесь для добавления в корзину
+        </button>
+      }
     </div>
   );
 };

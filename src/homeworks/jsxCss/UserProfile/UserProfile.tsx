@@ -1,27 +1,36 @@
 import React, { useEffect } from 'react';
 import styles from './UserProfile.module.sass'
 import { useDispatch, useSelector } from 'react-redux';
-import { removeProfile, selectProfile } from 'src/store/slices/profile/profile';
-import { removeToken } from 'src/store/slices/token/token';
+import { initialGetProfileSaga, removeProfile, selectProfile } from 'src/store/slices/profile/profile';
+import { removeToken, selectToken } from 'src/store/slices/token/token';
 import { useNavigate } from 'react-router-dom';
+import { clearProducts } from 'src/store/slices/products/productsSlice';
+import { clearCart } from 'src/store/slices/cart/cartSlice';
 
 const UserProfile = () => {
   const user = useSelector(selectProfile)
+  const token = useSelector(selectToken)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
-    // если не авторизован, то редирект на страницу логина
-    if (user === null) {
-      navigate('/login')
+    // если не авторизован, то редирект на страницу логина, иначе вызов апи для получения данных профиля
+    if (token.token === null) navigate('/login')
+    else {
+      dispatch(initialGetProfileSaga());
     }
-  }, [])
+  }, []);
+  useEffect(() => {
+    if (user.status === 'error') alert("Ошибка загрузки данных о пользователе")
+  }, [user.status]);
 
   return (
     <div className={styles.userProfile}>
       <button className={styles.btn} onClick={() => {
         dispatch(removeToken());
-        dispatch(removeProfile())
+        dispatch(removeProfile());
+        dispatch(clearProducts());
+        dispatch(clearCart());
         navigate('/login')
       }}>выйти</button>
       <h2>Профиль пользователя</h2>

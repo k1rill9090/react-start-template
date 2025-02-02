@@ -12,7 +12,6 @@ import { store } from './store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
     <BrowserRouter 
       future={{
         v7_relativeSplatPath: true,
@@ -29,5 +28,4 @@ root.render(
       </I18nextProvider>
     </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );

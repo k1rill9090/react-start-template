@@ -1,6 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "src/homeworks/ts1/3_write";
 import { RootState } from "src/store/store";
+import { selectProducts } from "../products/productsSlice";
 
 type CartItem = {
     id: string;
@@ -34,15 +35,18 @@ const cartSlice = createSlice({
 
         removeFromCart: (state, action: PayloadAction<string>) => {
             state.items = state.items.filter(item => item.id !== action.payload);
+        },
+        clearCart: (state) => {
+            state.items = [];
         }
     }
 })
 
 export const productInCart = createSelector(
-    [(state) => state.cart.items, (state) => state.product],
+    [(state) => state.cart.items, (state) => state.product.getProducts],
     (items, product) => {
         return items.map((item: CartItem) => {
-            const productAtr = product.find((product: Product) => product.id === item.id);
+            const productAtr = product.products.find((product: Product) => product.id === item.id);
             return {
                 id: productAtr.id,
                 price: productAtr.price,
@@ -50,12 +54,11 @@ export const productInCart = createSelector(
                 quantity: item.quantity
             }
         })
-
     }
 )
 
 export const selectCart = (state: RootState) => state.cart
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

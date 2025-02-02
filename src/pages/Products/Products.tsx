@@ -6,8 +6,9 @@ import Portal from 'src/homeworks/jsxCss/general/Modal/Portal'
 import Modal from 'src/homeworks/jsxCss/general/Modal/Modal'
 import ProductForm from 'src/homeworks/jsxCss/ProductForm/ProductForm'
 import { useDispatch, useSelector } from 'react-redux'
-import { generateToken, removeToken } from 'src/store/slices/token/token'
+import { getToken, removeToken } from 'src/store/slices/token/token'
 import { selectProfile } from 'src/store/slices/profile/profile'
+import useGetProfileInfo from 'src/app/hooks/useGetProfieInfo'
 
 const Products = () => {
   const getUser = useSelector(selectProfile)
@@ -20,7 +21,9 @@ const Products = () => {
     if (currentUrl.pathname === '/create-product') {
       setIsVisible(true)
     }
-  },[])
+  },[]);
+
+  useGetProfileInfo()
 
   const openModal = (state: boolean) => {
     navigate('/create-product')
