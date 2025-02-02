@@ -5,6 +5,7 @@ import { initialGetProfileSaga, removeProfile, selectProfile } from 'src/store/s
 import { removeToken, selectToken } from 'src/store/slices/token/token';
 import { useNavigate } from 'react-router-dom';
 import { clearProducts } from 'src/store/slices/products/productsSlice';
+import { clearCart } from 'src/store/slices/cart/cartSlice';
 
 const UserProfile = () => {
   const user = useSelector(selectProfile)
@@ -29,6 +30,7 @@ const UserProfile = () => {
         dispatch(removeToken());
         dispatch(removeProfile());
         dispatch(clearProducts());
+        dispatch(clearCart());
         navigate('/login')
       }}>выйти</button>
       <h2>Профиль пользователя</h2>

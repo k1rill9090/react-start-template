@@ -25,6 +25,7 @@ const GoodInCart: FC<GoodInCartProps> = ({ sum, name, quantity, id }) => {
           Цена: <b>{sum} руб.</b>
         </span>
         <span> Количество: {quantity}</span>
+        <span> Сумма: <b>{sum * quantity} руб.</b></span>
       </div>
       <button className={styles.cartButton} onClick={handleClick}>Удалить из корзины</button>
     </div>

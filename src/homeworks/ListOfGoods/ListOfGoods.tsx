@@ -14,6 +14,7 @@ import { productInCart, productInCartType, selectCart } from 'src/store/slices/c
 const ListOfGoods = () => {
   const dispatch = useDispatch()
   const listProducts = useSelector(selectProducts)
+  const productsInCart = useSelector(selectCart)
   const cartContent = useSelector(productInCart)
   const { theme } = useTheme();
 

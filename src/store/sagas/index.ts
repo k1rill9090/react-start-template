@@ -4,6 +4,7 @@ import { watcherAuthSaga } from './authSaga'
 import { watcherProfileSaga } from './profileSaga'
 import { watchFetchProductsSaga } from './getProductsSaga'
 import { watchAddProductSaga } from './addProductSaga'
+import { watchCreateOrderSaga } from './createOrderSaga'
 
 
 export function* rootSaga() {
@@ -12,7 +13,7 @@ export function* rootSaga() {
         watcherAuthSaga(), 
         watcherProfileSaga(), 
         watchFetchProductsSaga(),
-        watchAddProductSaga()
-
+        watchAddProductSaga(),
+        watchCreateOrderSaga(),
     ])
 }

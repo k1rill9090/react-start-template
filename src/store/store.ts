@@ -7,6 +7,7 @@ import initialFlag from './slices/initialFlag/initialFlag';
 import registration from './slices/registration/registration';
 import createSagaMiddleware from "redux-saga";
 import {rootSaga} from "./sagas";
+import orderReducer from './slices/order/orderSlice'
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -18,6 +19,7 @@ export const store = configureStore({
         profile: profile,
         initialFlag: initialFlag,
         registration: registration,
+        order: orderReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 })

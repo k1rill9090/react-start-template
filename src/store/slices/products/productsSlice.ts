@@ -4,10 +4,11 @@ import { RootState } from "src/store/store";
 
 const initialState = {
     getProducts: {
-    products: [] as Product[],
-    page: 1,
-    totalPages: 1,
-    error: ''
+        products: [] as Product[],
+        page: 1,
+        totalPages: 1,
+        status: '',
+        error: ''
     },
     addProduct: {
         payload: {
@@ -34,7 +35,8 @@ const productSlice = createSlice({
         },
         getProduct: (state, action: PayloadAction<Product[]>) => {
             if (action.payload !== null) {
-                state.getProducts.products.push(...action.payload)
+                state.getProducts.products.push(...action.payload);
+                state.getProducts.status = 'success';
             } 
             else state.getProducts.products = []
         },
